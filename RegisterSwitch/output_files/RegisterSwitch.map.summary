@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed May 01 16:28:07 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : RegisterSwitch
+Top-level Entity Name : RegisterSwitch
+Family : Cyclone IV E
+Total logic elements : 45
+    Total combinational functions : 45
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
