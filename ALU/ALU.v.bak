@@ -1,0 +1,20 @@
+module ALU(OP, A, B, Result, Carryout);
+
+	parameter n = 2;
+	input [2:0] OP;
+	input [4:0] A, B;
+	
+	reg output [4:0] result;
+	output Carryout;
+	
+	always @(*)
+		begin
+			case(OP)
+				3'b100: result = A + B;
+				3'b101: result = A - B;
+				3'b110: result = A * B;
+				3'b111: result = n ** B;
+				default: result = A + B;
+			endcase
+		end
+endmodule
