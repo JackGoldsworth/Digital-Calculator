@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RegisterSwitch
-Thu May 02 14:03:25 2019
+Thu May 02 19:49:53 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -50,13 +50,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 02 14:03:25 2019           ;
+; Analysis & Synthesis Status        ; Successful - Thu May 02 19:49:53 2019           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                      ; RegisterSwitch                                  ;
 ; Top-level Entity Name              ; RegisterSwitchorALU                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 144                                             ;
-;     Total combinational functions  ; 144                                             ;
+; Total logic elements               ; 136                                             ;
+;     Total combinational functions  ; 136                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 46                                              ;
@@ -166,8 +166,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -192,16 +191,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 144        ;
+; Estimated Total logic elements              ; 136        ;
 ;                                             ;            ;
-; Total combinational functions               ; 144        ;
+; Total combinational functions               ; 136        ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 71         ;
-;     -- 3 input functions                    ; 56         ;
+;     -- 4 input functions                    ; 70         ;
+;     -- 3 input functions                    ; 49         ;
 ;     -- <=2 input functions                  ; 17         ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 139        ;
+;     -- normal mode                          ; 131        ;
 ;     -- arithmetic mode                      ; 5          ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
@@ -213,9 +212,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 4          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; K[1]~input ;
-; Maximum fan-out                             ; 43         ;
-; Total fan-out                               ; 591        ;
-; Average fan-out                             ; 2.42       ;
+; Maximum fan-out                             ; 41         ;
+; Total fan-out                               ; 566        ;
+; Average fan-out                             ; 2.40       ;
 +---------------------------------------------+------------+
 
 
@@ -224,7 +223,7 @@ refer to the applicable agreement for further details.
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name         ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+---------------------+--------------+
-; |RegisterSwitchorALU            ; 144 (144)           ; 0 (0)                     ; 0           ; 4            ; 4       ; 0         ; 46   ; 0            ; |RegisterSwitchorALU                                        ; RegisterSwitchorALU ; work         ;
+; |RegisterSwitchorALU            ; 136 (136)           ; 0 (0)                     ; 0           ; 4            ; 4       ; 0         ; 46   ; 0            ; |RegisterSwitchorALU                                        ; RegisterSwitchorALU ; work         ;
 ;    |lpm_mult:Mult0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |RegisterSwitchorALU|lpm_mult:Mult0                         ; lpm_mult            ; work         ;
 ;       |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |RegisterSwitchorALU|lpm_mult:Mult0|mult_u9t:auto_generated ; mult_u9t            ; work         ;
 ;    |lpm_mult:Mult1|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |RegisterSwitchorALU|lpm_mult:Mult1                         ; lpm_mult            ; work         ;
@@ -260,26 +259,26 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; R0[0]$latch                                         ; R0[4]               ; yes                    ;
-; R0[1]$latch                                         ; R0[4]               ; yes                    ;
-; R0[2]$latch                                         ; R0[4]               ; yes                    ;
-; R0[3]$latch                                         ; R0[4]               ; yes                    ;
-; R0[4]$latch                                         ; R0[4]               ; yes                    ;
-; R1[0]$latch                                         ; R1[4]               ; yes                    ;
-; R1[1]$latch                                         ; R1[4]               ; yes                    ;
-; R1[2]$latch                                         ; R1[4]               ; yes                    ;
-; R1[3]$latch                                         ; R1[4]               ; yes                    ;
-; R1[4]$latch                                         ; R1[4]               ; yes                    ;
-; R2[0]$latch                                         ; R2[4]               ; yes                    ;
-; R2[1]$latch                                         ; R2[4]               ; yes                    ;
-; R2[2]$latch                                         ; R2[4]               ; yes                    ;
-; R2[3]$latch                                         ; R2[4]               ; yes                    ;
-; R2[4]$latch                                         ; R2[4]               ; yes                    ;
-; R3[0]$latch                                         ; R3[4]               ; yes                    ;
-; R3[1]$latch                                         ; R3[4]               ; yes                    ;
-; R3[2]$latch                                         ; R3[4]               ; yes                    ;
-; R3[3]$latch                                         ; R3[4]               ; yes                    ;
-; R3[4]$latch                                         ; R3[4]               ; yes                    ;
+; R0[0]$latch                                         ; Mux40               ; yes                    ;
+; R0[1]$latch                                         ; Mux40               ; yes                    ;
+; R0[2]$latch                                         ; Mux40               ; yes                    ;
+; R0[3]$latch                                         ; Mux40               ; yes                    ;
+; R0[4]$latch                                         ; Mux40               ; yes                    ;
+; R1[0]$latch                                         ; Mux30               ; yes                    ;
+; R1[1]$latch                                         ; Mux30               ; yes                    ;
+; R1[2]$latch                                         ; Mux30               ; yes                    ;
+; R1[3]$latch                                         ; Mux30               ; yes                    ;
+; R1[4]$latch                                         ; Mux30               ; yes                    ;
+; R2[0]$latch                                         ; Mux33               ; yes                    ;
+; R2[1]$latch                                         ; Mux33               ; yes                    ;
+; R2[2]$latch                                         ; Mux33               ; yes                    ;
+; R2[3]$latch                                         ; Mux33               ; yes                    ;
+; R2[4]$latch                                         ; Mux33               ; yes                    ;
+; R3[0]$latch                                         ; Mux34               ; yes                    ;
+; R3[1]$latch                                         ; Mux34               ; yes                    ;
+; R3[2]$latch                                         ; Mux34               ; yes                    ;
+; R3[3]$latch                                         ; Mux34               ; yes                    ;
+; R3[4]$latch                                         ; Mux34               ; yes                    ;
 ; Number of user-specified and inferred latches = 20  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -510,18 +509,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 46                          ;
-; cycloneiii_lcell_comb ; 144                         ;
+; cycloneiii_lcell_comb ; 136                         ;
 ;     arith             ; 5                           ;
 ;         3 data inputs ; 5                           ;
-;     normal            ; 139                         ;
+;     normal            ; 131                         ;
 ;         2 data inputs ; 17                          ;
-;         3 data inputs ; 51                          ;
-;         4 data inputs ; 71                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 70                          ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.74                        ;
+; Average LUT depth     ; 4.67                        ;
 +-----------------------+-----------------------------+
 
 
@@ -540,7 +539,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu May 02 14:03:14 2019
+    Info: Processing started: Thu May 02 19:49:42 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegisterSwitch -c RegisterSwitch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -548,41 +547,81 @@ Warning (12019): Can't analyze file -- file RegisterSwitch.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file registerswitchoralu.v
     Info (12023): Found entity 1: RegisterSwitchorALU File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 1
 Info (12127): Elaborating entity "RegisterSwitchorALU" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(78): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 78
-Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(79): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 79
-Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(80): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 80
-Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(81): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 81
-Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(15): inferring latch(es) for variable "R0", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(15): inferring latch(es) for variable "R3", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(15): inferring latch(es) for variable "R2", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(15): inferring latch(es) for variable "R1", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R1[0]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R1[1]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R1[2]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R1[3]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R1[4]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R2[0]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R2[1]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R2[2]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R2[3]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R2[4]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R3[0]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R3[1]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R3[2]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R3[3]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R3[4]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R0[0]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R0[1]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R0[2]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R0[3]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
-Info (10041): Inferred latch for "R0[4]" at RegisterSwitchorALU.v(15) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(22): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 22
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(24): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(25): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(26): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(27): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 27
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(28): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(32): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(33): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(34): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(35): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(36): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 36
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(40): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 40
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(41): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(42): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 42
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(42): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 42
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(43): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(43): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(44): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(44): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(48): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(49): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 49
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(50): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 50
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(50): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 50
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(51): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(51): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(52): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(52): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(56): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 56
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(57): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 57
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(58): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(58): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(59): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 59
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(59): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 59
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(60): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(60): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(64): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(65): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 65
+Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(65): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(66): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 66
+Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(66): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 66
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(67): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 67
+Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(67): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 67
+Warning (10235): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(68): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 68
+Warning (10230): Verilog HDL assignment warning at RegisterSwitchorALU.v(68): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 68
+Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(13): inferring latch(es) for variable "R0", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(13): inferring latch(es) for variable "R3", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(13): inferring latch(es) for variable "R2", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at RegisterSwitchorALU.v(13): inferring latch(es) for variable "R1", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R1[0]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R1[1]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R1[2]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R1[3]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R1[4]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R2[0]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R2[1]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R2[2]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R2[3]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R2[4]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R3[0]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R3[1]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R3[2]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R3[3]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R3[4]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R0[0]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R0[1]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R0[2]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R0[3]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
+Info (10041): Inferred latch for "R0[4]" at RegisterSwitchorALU.v(13) File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
 Info (278001): Inferred 4 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 69
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 70
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 71
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 68
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 69
-Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 69
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 58
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 59
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 60
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 57
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 58
+Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 58
     Info (12134): Parameter "LPM_WIDTHA" = "5"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "10"
@@ -594,8 +633,8 @@ Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following para
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_u9t.tdf
     Info (12023): Found entity 1: mult_u9t File: U:/281/Digital-Calculator/RegisterSwitch_ALU/db/mult_u9t.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 68
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 68
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 57
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 57
     Info (12134): Parameter "LPM_WIDTHA" = "5"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "10"
@@ -605,58 +644,60 @@ Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following para
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Warning (13012): Latch R0[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R0[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[2] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R0[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R0[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[2] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R0[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R0[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[2] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R0[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R0[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[2] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R0[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R0[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[2] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R1[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R1[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R1[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R1[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R1[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R1[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R1[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R1[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R1[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R1[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R2[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R2[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R2[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R2[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R2[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R2[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R2[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R2[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R2[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R2[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R3[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R3[0]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R3[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R3[1]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R3[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R3[2]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R3[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R3[3]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
-Warning (13012): Latch R3[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 15
+Warning (13012): Latch R3[4]$latch has unsafe behavior File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[1] File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 5
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Perform" File: U:/281/Digital-Calculator/RegisterSwitch_ALU/RegisterSwitchorALU.v Line: 7
+Info (21057): Implemented 186 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 20 output pins
-    Info (21061): Implemented 144 logic cells
+    Info (21061): Implemented 136 logic cells
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 681 megabytes
-    Info: Processing ended: Thu May 02 14:03:25 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 668 megabytes
+    Info: Processing ended: Thu May 02 19:49:53 2019
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:22
 
 

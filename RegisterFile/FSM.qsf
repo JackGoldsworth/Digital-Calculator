@@ -51,4 +51,17 @@ set_global_assignment -name BDF_FILE FSM.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_Y2 -to Clk
+set_location_assignment PIN_Y23 -to Reset
+set_location_assignment PIN_Y24 -to Perform
+set_location_assignment PIN_E21 -to Out00
+set_location_assignment PIN_E22 -to Out01
+set_location_assignment PIN_E25 -to Out02
+set_location_assignment PIN_E24 -to Out03
+set_location_assignment PIN_H21 -to Out04
+set_location_assignment PIN_AB28 -to a[0]
+set_location_assignment PIN_AC28 -to a[1]
+set_location_assignment PIN_AC27 -to a[2]
+set_location_assignment PIN_AD27 -to a[3]
+set_location_assignment PIN_AB27 -to a[4]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CalcBlock
-Thu May 02 19:26:42 2019
+Thu May 02 19:51:24 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 02 19:26:42 2019           ;
+; Analysis & Synthesis Status        ; Successful - Thu May 02 19:51:24 2019           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                      ; CalcBlock                                       ;
 ; Top-level Entity Name              ; CalcBlock                                       ;
@@ -185,8 +185,8 @@ refer to the applicable agreement for further details.
 ; Total combinational functions               ; 9           ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 3           ;
-;     -- 3 input functions                    ; 6           ;
-;     -- <=2 input functions                  ; 0           ;
+;     -- 3 input functions                    ; 4           ;
+;     -- <=2 input functions                  ; 2           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
 ;     -- normal mode                          ; 9           ;
@@ -202,8 +202,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; OP[0]~input ;
 ; Maximum fan-out                             ; 6           ;
-; Total fan-out                               ; 62          ;
-; Average fan-out                             ; 0.95        ;
+; Total fan-out                               ; 60          ;
+; Average fan-out                             ; 0.92        ;
 +---------------------------------------------+-------------+
 
 
@@ -223,10 +223,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------------------+------------------------+
-; RegisterSwitchorALU:inst2|R1[0]                    ; RegisterSwitchorALU:inst2|R1[4] ; yes                    ;
-; RegisterSwitchorALU:inst2|R2[1]                    ; RegisterSwitchorALU:inst2|R2[4] ; yes                    ;
-; RegisterSwitchorALU:inst2|R3[1]                    ; RegisterSwitchorALU:inst2|R3[4] ; yes                    ;
-; RegisterSwitchorALU:inst2|R3[0]                    ; RegisterSwitchorALU:inst2|R3[4] ; yes                    ;
+; RegisterSwitchorALU:inst2|R1[0]                    ; RegisterSwitchorALU:inst2|Mux30 ; yes                    ;
+; RegisterSwitchorALU:inst2|R2[1]                    ; RegisterSwitchorALU:inst2|Mux33 ; yes                    ;
+; RegisterSwitchorALU:inst2|R3[1]                    ; RegisterSwitchorALU:inst2|Mux34 ; yes                    ;
+; RegisterSwitchorALU:inst2|R3[0]                    ; RegisterSwitchorALU:inst2|Mux34 ; yes                    ;
 ; Number of user-specified and inferred latches = 4  ;                                 ;                        ;
 +----------------------------------------------------+---------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -265,11 +265,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; cycloneiii_lcell_comb ; 10                          ;
 ;     normal            ; 10                          ;
 ;         0 data inputs ; 1                           ;
-;         3 data inputs ; 6                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 3                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.42                        ;
+; Average LUT depth     ; 2.44                        ;
 +-----------------------+-----------------------------+
 
 
@@ -288,7 +289,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu May 02 19:26:32 2019
+    Info: Processing started: Thu May 02 19:51:13 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CalcBlock -c CalcBlock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -358,41 +359,81 @@ Info (12128): Elaborating entity "5BitRegister" for hierarchy "FSM:inst|5BitRegi
 Warning (12125): Using design file registerswitchoralu.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: RegisterSwitchorALU File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 1
 Info (12128): Elaborating entity "RegisterSwitchorALU" for hierarchy "RegisterSwitchorALU:inst2"
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(78): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 78
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(79): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 79
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(80): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 80
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(81): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 81
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(15): inferring latch(es) for variable "R0", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(15): inferring latch(es) for variable "R3", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(15): inferring latch(es) for variable "R2", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(15): inferring latch(es) for variable "R1", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R1[0]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R1[1]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R1[2]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R1[3]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R1[4]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R2[0]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R2[1]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R2[2]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R2[3]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R2[4]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R3[0]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R3[1]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R3[2]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R3[3]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R3[4]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R0[0]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R0[1]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R0[2]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R0[3]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Info (10041): Inferred latch for "R0[4]" at registerswitchoralu.v(15) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(22): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 22
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(24): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(25): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(26): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(27): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 27
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(28): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(32): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(33): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(34): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(35): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(36): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 36
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(40): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 40
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(41): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(42): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 42
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(42): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 42
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(43): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(43): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(44): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(44): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(48): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(49): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 49
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(50): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 50
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(50): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 50
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(51): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(51): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(52): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(52): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(56): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 56
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(57): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 57
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(58): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(58): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(59): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 59
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(59): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 59
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(60): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(60): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(64): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(65): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
+Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(65): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(66): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 66
+Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(66): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 66
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(67): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
+Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(67): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
+Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(68): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 68
+Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(68): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 68
+Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R0", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R3", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R2", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R1", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R1[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R1[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R1[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R1[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R1[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R2[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R2[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R2[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R2[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R2[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R3[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R3[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R3[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R3[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R3[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R0[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R0[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R0[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R0[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Info (10041): Inferred latch for "R0[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "RegisterSwitchorALU:inst2|R3[0]" merged with LATCH primitive "RegisterSwitchorALU:inst2|R3[1]" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
-Warning (13012): Latch RegisterSwitchorALU:inst2|R1[0] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
+    Info (13026): Duplicate LATCH primitive "RegisterSwitchorALU:inst2|R3[0]" merged with LATCH primitive "RegisterSwitchorALU:inst2|R3[1]" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
+Warning (13012): Latch RegisterSwitchorALU:inst2|R1[0] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
-Warning (13012): Latch RegisterSwitchorALU:inst2|R2[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
+Warning (13012): Latch RegisterSwitchorALU:inst2|R2[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
-Warning (13012): Latch RegisterSwitchorALU:inst2|R3[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 15
+Warning (13012): Latch RegisterSwitchorALU:inst2|R3[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
     Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "R0[4]" is stuck at GND
@@ -414,16 +455,17 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "Clk"
     Warning (15610): No output dependent on input pin "Reset"
+    Warning (15610): No output dependent on input pin "Perform"
 Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 20 output pins
     Info (21061): Implemented 9 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 92 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 133 warnings
     Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Thu May 02 19:26:43 2019
+    Info: Processing ended: Thu May 02 19:51:24 2019
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:20
 

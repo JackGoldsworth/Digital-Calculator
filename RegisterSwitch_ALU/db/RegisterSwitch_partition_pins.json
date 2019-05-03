@@ -104,11 +104,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "d[0]",
+					"name" : "c[0]",
 					"strict" : false
 				},
 				{
-					"name" : "c[0]",
+					"name" : "d[0]",
 					"strict" : false
 				},
 				{
@@ -181,10 +181,6 @@
 				},
 				{
 					"name" : "d[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Perform",
 					"strict" : false
 				}
 			]

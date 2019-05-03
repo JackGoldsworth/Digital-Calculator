@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu May 02 14:03:40 2019
+Fitter Status : Successful - Thu May 02 19:50:07 2019
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : RegisterSwitch
 Top-level Entity Name : RegisterSwitchorALU
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 144 / 114,480 ( < 1 % )
-    Total combinational functions : 144 / 114,480 ( < 1 % )
+Total logic elements : 136 / 114,480 ( < 1 % )
+    Total combinational functions : 136 / 114,480 ( < 1 % )
     Dedicated logic registers : 0 / 114,480 ( 0 % )
 Total registers : 0
 Total pins : 46 / 529 ( 9 % )

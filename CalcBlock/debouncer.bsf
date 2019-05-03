@@ -18,46 +18,33 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details.
 */
-(header "symbol" (version "1.1"))
+(header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 200 128)
-	(text "ALU" (rect 5 0 26 12)(font "Arial" ))
-	(text "inst" (rect 8 96 20 108)(font "Arial" ))
+	(rect 16 16 160 112)
+	(text "debouncer" (rect 5 0 67 19)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "OP[2..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "OP[2..0]" (rect 21 27 54 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
+		(text "Manual" (rect 0 0 42 19)(font "Intel Clear" (font_size 8)))
+		(text "Manual" (rect 21 27 63 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "A[4..0]" (rect 0 0 29 12)(font "Arial" ))
-		(text "A[4..0]" (rect 21 43 50 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "Board" (rect 0 0 35 19)(font "Intel Clear" (font_size 8)))
+		(text "Board" (rect 21 43 56 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 0 64)
-		(input)
-		(text "B[4..0]" (rect 0 0 27 12)(font "Arial" ))
-		(text "B[4..0]" (rect 21 59 48 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 184 32)
+		(pt 144 32)
 		(output)
-		(text "Result[5..0]" (rect 0 0 46 12)(font "Arial" ))
-		(text "Result[5..0]" (rect 117 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
+		(text "Smooth" (rect 0 0 46 19)(font "Intel Clear" (font_size 8)))
+		(text "Smooth" (rect 77 27 123 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 32)(pt 128 32))
 	)
-	(parameter
-		"n"
-		"2"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 168 96)(line_width 1))
+		(rectangle (rect 16 16 128 80))
 	)
-	(annotation_block (parameter)(rect 200 -64 300 16))
 )
