@@ -1,0 +1,146 @@
+|FSM
+Out04 <= <GND>
+Out03 <= <GND>
+Out02 <= <GND>
+Out01 <= <GND>
+Out00 <= <GND>
+Out14 <= R14.DB_MAX_OUTPUT_PORT_TYPE
+R14 => Out14.DATAIN
+Out13 <= R13.DB_MAX_OUTPUT_PORT_TYPE
+R13 => Out13.DATAIN
+Out12 <= R12.DB_MAX_OUTPUT_PORT_TYPE
+R12 => Out12.DATAIN
+Out11 <= R11.DB_MAX_OUTPUT_PORT_TYPE
+R11 => Out11.DATAIN
+Out10 <= R10.DB_MAX_OUTPUT_PORT_TYPE
+R10 => Out10.DATAIN
+Out24 <= R24.DB_MAX_OUTPUT_PORT_TYPE
+R24 => Out24.DATAIN
+Out23 <= R23.DB_MAX_OUTPUT_PORT_TYPE
+R23 => Out23.DATAIN
+Out22 <= R22.DB_MAX_OUTPUT_PORT_TYPE
+R22 => Out22.DATAIN
+Out21 <= R21.DB_MAX_OUTPUT_PORT_TYPE
+R21 => Out21.DATAIN
+Out20 <= R20.DB_MAX_OUTPUT_PORT_TYPE
+R20 => Out20.DATAIN
+Out34 <= R34.DB_MAX_OUTPUT_PORT_TYPE
+R34 => Out34.DATAIN
+Out33 <= R33.DB_MAX_OUTPUT_PORT_TYPE
+R33 => Out33.DATAIN
+Out32 <= R32.DB_MAX_OUTPUT_PORT_TYPE
+R32 => Out32.DATAIN
+Out31 <= R31.DB_MAX_OUTPUT_PORT_TYPE
+R31 => Out31.DATAIN
+Out30 <= R30.DB_MAX_OUTPUT_PORT_TYPE
+R30 => Out30.DATAIN
+Perform => inst5.IN0
+Perform => inst6.IN0
+Perform => inst7.IN0
+Perform => inst8.IN0
+Clk => inst5.IN1
+Clk => inst6.IN1
+Clk => inst7.IN1
+Clk => inst8.IN1
+Reset => 5BitRegister:inst.Reset
+Reset => 5BitRegister:inst1.Reset
+Reset => 5BitRegister:inst2.Reset
+Reset => 5BitRegister:inst3.Reset
+R1 => 5BitRegister:inst.In1
+R1 => 5BitRegister:inst1.In1
+R1 => 5BitRegister:inst2.In1
+R1 => 5BitRegister:inst3.In1
+R0 => 5BitRegister:inst.In0
+R0 => 5BitRegister:inst1.In0
+R0 => 5BitRegister:inst2.In0
+R0 => 5BitRegister:inst3.In0
+R2 => 5BitRegister:inst.In2
+R2 => 5BitRegister:inst1.In2
+R2 => 5BitRegister:inst2.In2
+R2 => 5BitRegister:inst3.In2
+R3 => 5BitRegister:inst.In3
+R3 => 5BitRegister:inst1.In3
+R3 => 5BitRegister:inst2.In3
+R3 => 5BitRegister:inst3.In3
+R4 => 5BitRegister:inst.In4
+R4 => 5BitRegister:inst1.In4
+R4 => 5BitRegister:inst2.In4
+R4 => 5BitRegister:inst3.In4
+
+
+|FSM|5BitRegister:inst
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|FSM|5BitRegister:inst1
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|FSM|5BitRegister:inst2
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|FSM|5BitRegister:inst3
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+

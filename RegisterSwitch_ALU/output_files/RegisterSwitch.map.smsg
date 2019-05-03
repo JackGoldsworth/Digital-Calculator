@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at RegisterSwitchorALU.v(3): object "r0" differs only in case from object "R0" in the same scope File: U:/281/Digital-Calculator/RegisterSwitch/RegisterSwitchorALU.v Line: 3
+Info (10281): Verilog HDL Declaration information at RegisterSwitchorALU.v(3): object "r1" differs only in case from object "R1" in the same scope File: U:/281/Digital-Calculator/RegisterSwitch/RegisterSwitchorALU.v Line: 3
+Info (10281): Verilog HDL Declaration information at RegisterSwitchorALU.v(3): object "r2" differs only in case from object "R2" in the same scope File: U:/281/Digital-Calculator/RegisterSwitch/RegisterSwitchorALU.v Line: 3
+Info (10281): Verilog HDL Declaration information at RegisterSwitchorALU.v(3): object "r3" differs only in case from object "R3" in the same scope File: U:/281/Digital-Calculator/RegisterSwitch/RegisterSwitchorALU.v Line: 3

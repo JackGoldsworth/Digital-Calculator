@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Out14",
+					"strict" : false
+				},
+				{
+					"name" : "Out13",
+					"strict" : false
+				},
+				{
+					"name" : "Out12",
+					"strict" : false
+				},
+				{
+					"name" : "Out11",
+					"strict" : false
+				},
+				{
+					"name" : "Out10",
+					"strict" : false
+				},
+				{
+					"name" : "Out24",
+					"strict" : false
+				},
+				{
+					"name" : "Out23",
+					"strict" : false
+				},
+				{
+					"name" : "Out22",
+					"strict" : false
+				},
+				{
+					"name" : "Out21",
+					"strict" : false
+				},
+				{
+					"name" : "Out20",
+					"strict" : false
+				},
+				{
+					"name" : "Out34",
+					"strict" : false
+				},
+				{
+					"name" : "Out33",
+					"strict" : false
+				},
+				{
+					"name" : "Out32",
+					"strict" : false
+				},
+				{
+					"name" : "Out31",
+					"strict" : false
+				},
+				{
+					"name" : "Out30",
+					"strict" : false
+				},
+				{
+					"name" : "R14",
+					"strict" : false
+				},
+				{
+					"name" : "R13",
+					"strict" : false
+				},
+				{
+					"name" : "R12",
+					"strict" : false
+				},
+				{
+					"name" : "R11",
+					"strict" : false
+				},
+				{
+					"name" : "R10",
+					"strict" : false
+				},
+				{
+					"name" : "R24",
+					"strict" : false
+				},
+				{
+					"name" : "R23",
+					"strict" : false
+				},
+				{
+					"name" : "R22",
+					"strict" : false
+				},
+				{
+					"name" : "R21",
+					"strict" : false
+				},
+				{
+					"name" : "R20",
+					"strict" : false
+				},
+				{
+					"name" : "R34",
+					"strict" : false
+				},
+				{
+					"name" : "R33",
+					"strict" : false
+				},
+				{
+					"name" : "R32",
+					"strict" : false
+				},
+				{
+					"name" : "R31",
+					"strict" : false
+				},
+				{
+					"name" : "R30",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
