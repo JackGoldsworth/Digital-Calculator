@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalCalculator
-Thu May 02 21:41:58 2019
+Fri May 03 00:54:13 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -49,15 +49,15 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 02 21:41:58 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 03 00:54:13 2019           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                      ; DigitalCalculator                               ;
 ; Top-level Entity Name              ; DigitalCalculator                               ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 233                                             ;
-;     Total combinational functions  ; 219                                             ;
-;     Dedicated logic registers      ; 46                                              ;
-; Total registers                    ; 46                                              ;
+; Total logic elements               ; 209                                             ;
+;     Total combinational functions  ; 196                                             ;
+;     Dedicated logic registers      ; 25                                              ;
+; Total registers                    ; 25                                              ;
 ; Total pins                         ; 64                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -179,10 +179,8 @@ refer to the applicable agreement for further details.
 ; seven_seg_decoder.v              ; yes             ; Auto-Found Verilog HDL File              ; U:/281/Digital-Calculator/DigitalCalculator/seven_seg_decoder.v          ;         ;
 ; bdc.v                            ; yes             ; Auto-Found Verilog HDL File              ; U:/281/Digital-Calculator/DigitalCalculator/bdc.v                        ;         ;
 ; calcblock.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/calcblock.bdf                ;         ;
-; fsm.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/fsm.bdf                      ;         ;
+; registerfile.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/registerfile.bdf             ;         ;
 ; 5bitregister.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/5bitregister.bdf             ;         ;
-; debouncer.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/debouncer.bdf                ;         ;
-; clock_divider_1024.bdf           ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/DigitalCalculator/clock_divider_1024.bdf       ;         ;
 ; registerswitchoralu.v            ; yes             ; Auto-Found Verilog HDL File              ; U:/281/Digital-Calculator/DigitalCalculator/registerswitchoralu.v        ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
 ; aglobal180.inc                   ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/aglobal180.inc  ;         ;
@@ -199,20 +197,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 233        ;
+; Estimated Total logic elements              ; 209        ;
 ;                                             ;            ;
-; Total combinational functions               ; 219        ;
+; Total combinational functions               ; 196        ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 153        ;
-;     -- 3 input functions                    ; 41         ;
-;     -- <=2 input functions                  ; 25         ;
+;     -- 4 input functions                    ; 144        ;
+;     -- 3 input functions                    ; 35         ;
+;     -- <=2 input functions                  ; 17         ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 214        ;
+;     -- normal mode                          ; 191        ;
 ;     -- arithmetic mode                      ; 5          ;
 ;                                             ;            ;
-; Total registers                             ; 46         ;
-;     -- Dedicated logic registers            ; 46         ;
+; Total registers                             ; 25         ;
+;     -- Dedicated logic registers            ; 25         ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
 ; I/O pins                                    ; 64         ;
@@ -220,9 +218,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 4          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; K[1]~input ;
-; Maximum fan-out                             ; 47         ;
-; Total fan-out                               ; 1057       ;
-; Average fan-out                             ; 2.64       ;
+; Maximum fan-out                             ; 48         ;
+; Total fan-out                               ; 947        ;
+; Average fan-out                             ; 2.65       ;
 +---------------------------------------------+------------+
 
 
@@ -231,11 +229,11 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Entity Name         ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DigitalCalculator                    ; 219 (0)             ; 46 (0)                    ; 0           ; 4            ; 4       ; 0         ; 64   ; 0            ; |DigitalCalculator                                                                                 ; DigitalCalculator   ; work         ;
-;    |CalcBlock:inst|                   ; 151 (0)             ; 46 (0)                    ; 0           ; 4            ; 4       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst                                                                  ; CalcBlock           ; work         ;
-;       |FSM:inst|                      ; 1 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|FSM:inst                                                         ; FSM                 ; work         ;
-;          |5BitRegister:inst|          ; 0 (0)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|FSM:inst|5BitRegister:inst                                       ; 5BitRegister        ; work         ;
-;       |RegisterSwitchorALU:inst1|     ; 124 (124)           ; 20 (20)                   ; 0           ; 4            ; 4       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1                                        ; RegisterSwitchorALU ; work         ;
+; |DigitalCalculator                    ; 196 (0)             ; 25 (0)                    ; 0           ; 4            ; 4       ; 0         ; 64   ; 0            ; |DigitalCalculator                                                                                 ; DigitalCalculator   ; work         ;
+;    |CalcBlock:inst|                   ; 128 (0)             ; 25 (0)                    ; 0           ; 4            ; 4       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst                                                                  ; CalcBlock           ; work         ;
+;       |RegisterFile:inst|             ; 1 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterFile:inst                                                ; RegisterFile        ; work         ;
+;          |5BitRegister:inst|          ; 0 (0)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterFile:inst|5BitRegister:inst                              ; 5BitRegister        ; work         ;
+;       |RegisterSwitchorALU:inst1|     ; 127 (127)           ; 20 (20)                   ; 0           ; 4            ; 4       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1                                        ; RegisterSwitchorALU ; work         ;
 ;          |lpm_mult:Mult0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult0                         ; lpm_mult            ; work         ;
 ;             |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult0|mult_u9t:auto_generated ; mult_u9t            ; work         ;
 ;          |lpm_mult:Mult1|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult1                         ; lpm_mult            ; work         ;
@@ -244,9 +242,6 @@ refer to the applicable agreement for further details.
 ;             |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult2|mult_u9t:auto_generated ; mult_u9t            ; work         ;
 ;          |lpm_mult:Mult3|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult3                         ; lpm_mult            ; work         ;
 ;             |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1|lpm_mult:Mult3|mult_u9t:auto_generated ; mult_u9t            ; work         ;
-;       |debouncer:inst3|               ; 26 (0)              ; 21 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|debouncer:inst3                                                  ; debouncer           ; work         ;
-;          |clock_divider_1024:inst1|   ; 12 (12)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|debouncer:inst3|clock_divider_1024:inst1                         ; clock_divider_1024  ; work         ;
-;          |clock_divider_1024:inst|    ; 14 (14)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|CalcBlock:inst|debouncer:inst3|clock_divider_1024:inst                          ; clock_divider_1024  ; work         ;
 ;    |bdc:inst1|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|bdc:inst1                                                                       ; bdc                 ; work         ;
 ;    |bdc:inst2|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|bdc:inst2                                                                       ; bdc                 ; work         ;
 ;    |bdc:inst3|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalCalculator|bdc:inst3                                                                       ; bdc                 ; work         ;
@@ -286,7 +281,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 46    ;
+; Total registers                              ; 25    ;
 ; Number of registers using Synchronous Clear  ; 5     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 5     ;
@@ -508,26 +503,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 64                          ;
-; cycloneiii_ff         ; 46                          ;
+; cycloneiii_ff         ; 25                          ;
 ;     CLR               ; 5                           ;
 ;     ENA               ; 15                          ;
 ;     ENA SCLR          ; 2                           ;
 ;     SCLR              ; 3                           ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 228                         ;
+; cycloneiii_lcell_comb ; 205                         ;
 ;     arith             ; 5                           ;
 ;         3 data inputs ; 5                           ;
-;     normal            ; 223                         ;
+;     normal            ; 200                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 153                         ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 144                         ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.40                        ;
-; Average LUT depth     ; 3.63                        ;
+; Max LUT depth         ; 9.30                        ;
+; Average LUT depth     ; 4.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -546,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu May 02 21:41:46 2019
+    Info: Processing started: Fri May 03 00:54:00 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalCalculator -c DigitalCalculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -562,9 +556,9 @@ Info (12128): Elaborating entity "bdc" for hierarchy "bdc:inst1"
 Warning (12125): Using design file calcblock.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: CalcBlock
 Info (12128): Elaborating entity "CalcBlock" for hierarchy "CalcBlock:inst"
-Warning (12125): Using design file fsm.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: FSM
-Info (12128): Elaborating entity "FSM" for hierarchy "CalcBlock:inst|FSM:inst"
+Warning (12125): Using design file registerfile.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RegisterFile
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "CalcBlock:inst|RegisterFile:inst"
 Warning (275080): Converted elements in bus name "out" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "out[1]" to "out1"
     Warning (275081): Converted element name(s) from "out[0]" to "out0"
@@ -597,13 +591,7 @@ Warning (275080): Converted elements in bus name "Out3" using legacy naming rule
     Warning (275081): Converted element name(s) from "Out3[4..0]" to "Out34..0"
 Warning (12125): Using design file 5bitregister.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: 5BitRegister
-Info (12128): Elaborating entity "5BitRegister" for hierarchy "CalcBlock:inst|FSM:inst|5BitRegister:inst"
-Warning (12125): Using design file debouncer.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: debouncer
-Info (12128): Elaborating entity "debouncer" for hierarchy "CalcBlock:inst|debouncer:inst3"
-Warning (12125): Using design file clock_divider_1024.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: clock_divider_1024
-Info (12128): Elaborating entity "clock_divider_1024" for hierarchy "CalcBlock:inst|debouncer:inst3|clock_divider_1024:inst1"
+Info (12128): Elaborating entity "5BitRegister" for hierarchy "CalcBlock:inst|RegisterFile:inst|5BitRegister:inst"
 Warning (12125): Using design file registerswitchoralu.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: RegisterSwitchorALU File: U:/281/Digital-Calculator/DigitalCalculator/registerswitchoralu.v Line: 1
 Info (12128): Elaborating entity "RegisterSwitchorALU" for hierarchy "CalcBlock:inst|RegisterSwitchorALU:inst1"
@@ -644,15 +632,15 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 306 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 282 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 238 logic cells
+    Info (21061): Implemented 214 logic cells
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
-    Info: Peak virtual memory: 685 megabytes
-    Info: Processing ended: Thu May 02 21:41:58 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:21
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 684 megabytes
+    Info: Processing ended: Fri May 03 00:54:13 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:23
 
 

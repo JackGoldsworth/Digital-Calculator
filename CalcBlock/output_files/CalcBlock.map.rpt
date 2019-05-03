@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CalcBlock
-Thu May 02 19:51:24 2019
+Fri May 03 00:52:59 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -13,12 +13,17 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Analysis & Synthesis DSP Block Usage Summary
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 11. Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult2
+ 12. Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult1
+ 13. Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult0
+ 14. Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult3
+ 15. lpm_mult Parameter Settings by Entity Instance
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -44,19 +49,19 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 02 19:51:24 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 03 00:52:58 2019           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                      ; CalcBlock                                       ;
 ; Top-level Entity Name              ; CalcBlock                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 9                                               ;
-;     Total combinational functions  ; 9                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
+; Total logic elements               ; 139                                             ;
+;     Total combinational functions  ; 126                                             ;
+;     Dedicated logic registers      ; 25                                              ;
+; Total registers                    ; 25                                              ;
 ; Total pins                         ; 28                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 4                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
@@ -156,80 +161,102 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------+---------+
-; CalcBlock.bdf                    ; yes             ; User Block Diagram/Schematic File        ; U:/281/Digital-Calculator/CalcBlock/CalcBlock.bdf         ;         ;
-; fsm.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/CalcBlock/fsm.bdf               ;         ;
-; 5bitregister.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/CalcBlock/5bitregister.bdf      ;         ;
-; registerswitchoralu.v            ; yes             ; Auto-Found Verilog HDL File              ; U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v ;         ;
-+----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------+---------+
+; CalcBlock.bdf                    ; yes             ; User Block Diagram/Schematic File        ; U:/281/Digital-Calculator/CalcBlock/CalcBlock.bdf                        ;         ;
+; registerfile.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/CalcBlock/registerfile.bdf                     ;         ;
+; 5bitregister.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/281/Digital-Calculator/CalcBlock/5bitregister.bdf                     ;         ;
+; registerswitchoralu.v            ; yes             ; Auto-Found Verilog HDL File              ; U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v                ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/aglobal180.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/altera/intelfpga/18.0/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_u9t.tdf                  ; yes             ; Auto-Generated Megafunction              ; U:/281/Digital-Calculator/CalcBlock/db/mult_u9t.tdf                      ;         ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 9           ;
-;                                             ;             ;
-; Total combinational functions               ; 9           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 3           ;
-;     -- 3 input functions                    ; 4           ;
-;     -- <=2 input functions                  ; 2           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 9           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 28          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; OP[0]~input ;
-; Maximum fan-out                             ; 6           ;
-; Total fan-out                               ; 60          ;
-; Average fan-out                             ; 0.92        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 139        ;
+;                                             ;            ;
+; Total combinational functions               ; 126        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 74         ;
+;     -- 3 input functions                    ; 46         ;
+;     -- <=2 input functions                  ; 6          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 121        ;
+;     -- arithmetic mode                      ; 5          ;
+;                                             ;            ;
+; Total registers                             ; 25         ;
+;     -- Dedicated logic registers            ; 25         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 28         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 4          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; K[1]~input ;
+; Maximum fan-out                             ; 45         ;
+; Total fan-out                               ; 610        ;
+; Average fan-out                             ; 2.84       ;
++---------------------------------------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name         ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+---------------------+--------------+
-; |CalcBlock                     ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |CalcBlock                           ; CalcBlock           ; work         ;
-;    |RegisterSwitchorALU:inst2| ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst2 ; RegisterSwitchorALU ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                         ; Entity Name         ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+---------------------+--------------+
+; |CalcBlock                         ; 126 (0)             ; 25 (0)                    ; 0           ; 4            ; 4       ; 0         ; 28   ; 0            ; |CalcBlock                                                                  ; CalcBlock           ; work         ;
+;    |RegisterFile:inst|             ; 1 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterFile:inst                                                ; RegisterFile        ; work         ;
+;       |5BitRegister:inst|          ; 0 (0)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterFile:inst|5BitRegister:inst                              ; 5BitRegister        ; work         ;
+;    |RegisterSwitchorALU:inst1|     ; 125 (125)           ; 20 (20)                   ; 0           ; 4            ; 4       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1                                        ; RegisterSwitchorALU ; work         ;
+;       |lpm_mult:Mult0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult0                         ; lpm_mult            ; work         ;
+;          |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult0|mult_u9t:auto_generated ; mult_u9t            ; work         ;
+;       |lpm_mult:Mult1|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult1                         ; lpm_mult            ; work         ;
+;          |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult1|mult_u9t:auto_generated ; mult_u9t            ; work         ;
+;       |lpm_mult:Mult2|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult2                         ; lpm_mult            ; work         ;
+;          |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult2|mult_u9t:auto_generated ; mult_u9t            ; work         ;
+;       |lpm_mult:Mult3|             ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult3                         ; lpm_mult            ; work         ;
+;          |mult_u9t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |CalcBlock|RegisterSwitchorALU:inst1|lpm_mult:Mult3|mult_u9t:auto_generated ; mult_u9t            ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                           ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; RegisterSwitchorALU:inst2|R1[0]                    ; RegisterSwitchorALU:inst2|Mux30 ; yes                    ;
-; RegisterSwitchorALU:inst2|R2[1]                    ; RegisterSwitchorALU:inst2|Mux33 ; yes                    ;
-; RegisterSwitchorALU:inst2|R3[1]                    ; RegisterSwitchorALU:inst2|Mux34 ; yes                    ;
-; RegisterSwitchorALU:inst2|R3[0]                    ; RegisterSwitchorALU:inst2|Mux34 ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                                 ;                        ;
-+----------------------------------------------------+---------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 4           ;
+; Simple Multipliers (18-bit)           ; 0           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 4           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +------------------------------------------------------+
@@ -237,12 +264,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 25    ;
+; Number of registers using Synchronous Clear  ; 5     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 17    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -252,8 +279,205 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |CalcBlock|RegisterSwitchorALU:inst2|Mux30 ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 22 LEs               ; 20 LEs                 ; Yes        ; |CalcBlock|RegisterSwitchorALU:inst1|R0[2] ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |CalcBlock|RegisterSwitchorALU:inst1|R3[4] ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |CalcBlock|RegisterSwitchorALU:inst1|R2[4] ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |CalcBlock|RegisterSwitchorALU:inst1|R1[4] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |CalcBlock|RegisterSwitchorALU:inst1|Add0  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+---------------------------+
+; Parameter Name                                 ; Value        ; Type                      ;
++------------------------------------------------+--------------+---------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
+; LATENCY                                        ; 0            ; Untyped                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; USE_EAB                                        ; OFF          ; Untyped                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                   ;
+; CBXI_PARAMETER                                 ; mult_u9t     ; Untyped                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                   ;
++------------------------------------------------+--------------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+---------------------------+
+; Parameter Name                                 ; Value        ; Type                      ;
++------------------------------------------------+--------------+---------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
+; LATENCY                                        ; 0            ; Untyped                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; USE_EAB                                        ; OFF          ; Untyped                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                   ;
+; CBXI_PARAMETER                                 ; mult_u9t     ; Untyped                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                   ;
++------------------------------------------------+--------------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+---------------------------+
+; Parameter Name                                 ; Value        ; Type                      ;
++------------------------------------------------+--------------+---------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
+; LATENCY                                        ; 0            ; Untyped                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; USE_EAB                                        ; OFF          ; Untyped                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                   ;
+; CBXI_PARAMETER                                 ; mult_u9t     ; Untyped                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                   ;
++------------------------------------------------+--------------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RegisterSwitchorALU:inst1|lpm_mult:Mult3 ;
++------------------------------------------------+--------------+---------------------------+
+; Parameter Name                                 ; Value        ; Type                      ;
++------------------------------------------------+--------------+---------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                   ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
+; LATENCY                                        ; 0            ; Untyped                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                   ;
+; USE_EAB                                        ; OFF          ; Untyped                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                   ;
+; CBXI_PARAMETER                                 ; mult_u9t     ; Untyped                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                   ;
++------------------------------------------------+--------------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                   ;
++---------------------------------------+------------------------------------------+
+; Name                                  ; Value                                    ;
++---------------------------------------+------------------------------------------+
+; Number of entity instances            ; 4                                        ;
+; Entity Instance                       ; RegisterSwitchorALU:inst1|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 5                                        ;
+;     -- LPM_WIDTHB                     ; 5                                        ;
+;     -- LPM_WIDTHP                     ; 10                                       ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                       ;
+;     -- USE_EAB                        ; OFF                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
+; Entity Instance                       ; RegisterSwitchorALU:inst1|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 5                                        ;
+;     -- LPM_WIDTHB                     ; 5                                        ;
+;     -- LPM_WIDTHP                     ; 10                                       ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                       ;
+;     -- USE_EAB                        ; OFF                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
+; Entity Instance                       ; RegisterSwitchorALU:inst1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 5                                        ;
+;     -- LPM_WIDTHB                     ; 5                                        ;
+;     -- LPM_WIDTHP                     ; 10                                       ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                       ;
+;     -- USE_EAB                        ; OFF                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
+; Entity Instance                       ; RegisterSwitchorALU:inst1|lpm_mult:Mult3 ;
+;     -- LPM_WIDTHA                     ; 5                                        ;
+;     -- LPM_WIDTHB                     ; 5                                        ;
+;     -- LPM_WIDTHP                     ; 10                                       ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                       ;
+;     -- USE_EAB                        ; OFF                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
++---------------------------------------+------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -262,15 +486,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 28                          ;
-; cycloneiii_lcell_comb ; 10                          ;
-;     normal            ; 10                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 3                           ;
+; cycloneiii_ff         ; 25                          ;
+;     CLR               ; 5                           ;
+;     ENA               ; 15                          ;
+;     ENA SCLR          ; 2                           ;
+;     SCLR              ; 3                           ;
+; cycloneiii_lcell_comb ; 126                         ;
+;     arith             ; 5                           ;
+;         3 data inputs ; 5                           ;
+;     normal            ; 121                         ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 74                          ;
+; cycloneiii_mac_mult   ; 4                           ;
+; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.44                        ;
+; Max LUT depth         ; 8.40                        ;
+; Average LUT depth     ; 4.58                        ;
 +-----------------------+-----------------------------+
 
 
@@ -279,7 +511,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -289,27 +521,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu May 02 19:51:13 2019
+    Info: Processing started: Fri May 03 00:52:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CalcBlock -c CalcBlock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file calcblock.bdf
     Info (12023): Found entity 1: CalcBlock
 Info (12127): Elaborating entity "CalcBlock" for the top level hierarchy
-Warning (275083): Bus "R1[4..0]" found using same base name as "R", which might lead to a name conflict.
-Warning (275083): Bus "R2[4..0]" found using same base name as "R", which might lead to a name conflict.
-Warning (275083): Bus "R3[4..0]" found using same base name as "R", which might lead to a name conflict.
-Warning (275080): Converted elements in bus name "R" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R[4..0]" to "R4..0"
-Warning (275080): Converted elements in bus name "R1" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R1[4..0]" to "R14..0"
-Warning (275080): Converted elements in bus name "R2" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R2[4..0]" to "R24..0"
-Warning (275080): Converted elements in bus name "R3" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R3[4..0]" to "R34..0"
-Warning (12125): Using design file fsm.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: FSM
-Info (12128): Elaborating entity "FSM" for hierarchy "FSM:inst"
+Warning (12125): Using design file registerfile.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RegisterFile
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:inst"
 Warning (275080): Converted elements in bus name "out" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "out[1]" to "out1"
     Warning (275081): Converted element name(s) from "out[0]" to "out0"
@@ -340,133 +561,53 @@ Warning (275080): Converted elements in bus name "Out2" using legacy naming rule
     Warning (275081): Converted element name(s) from "Out2[4..0]" to "Out24..0"
 Warning (275080): Converted elements in bus name "Out3" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "Out3[4..0]" to "Out34..0"
-Warning (275080): Converted elements in bus name "R" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R[4..0]" to "R4..0"
-Warning (275080): Converted elements in bus name "R1" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R1[4..0]" to "R14..0"
-Warning (275080): Converted elements in bus name "R2" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R2[4..0]" to "R24..0"
-Warning (275080): Converted elements in bus name "R3" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "R3[4..0]" to "R34..0"
-Warning (275043): Pin "Out04" is missing source
-Warning (275043): Pin "Out03" is missing source
-Warning (275043): Pin "Out02" is missing source
-Warning (275043): Pin "Out01" is missing source
-Warning (275043): Pin "Out00" is missing source
 Warning (12125): Using design file 5bitregister.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: 5BitRegister
-Info (12128): Elaborating entity "5BitRegister" for hierarchy "FSM:inst|5BitRegister:inst"
+Info (12128): Elaborating entity "5BitRegister" for hierarchy "RegisterFile:inst|5BitRegister:inst"
 Warning (12125): Using design file registerswitchoralu.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: RegisterSwitchorALU File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 1
-Info (12128): Elaborating entity "RegisterSwitchorALU" for hierarchy "RegisterSwitchorALU:inst2"
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(22): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 22
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(24): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 24
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(25): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 25
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(26): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 26
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(27): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 27
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(28): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 28
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(32): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 32
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(33): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 33
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(34): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 34
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(35): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 35
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(36): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 36
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(40): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 40
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(41): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 41
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(42): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 42
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(42): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 42
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(43): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 43
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(43): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 43
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(44): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 44
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(44): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 44
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(48): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 48
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(49): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 49
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(50): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 50
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(50): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 50
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(51): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 51
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(51): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 51
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(52): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 52
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(52): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 52
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(56): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 56
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(57): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 57
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(58): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 58
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(58): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 58
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(59): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 59
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(59): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 59
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(60): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 60
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(60): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 60
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(64): variable "K" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 64
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(65): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(65): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(66): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 66
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(66): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 66
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(67): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(67): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
-Warning (10235): Verilog HDL Always Construct warning at registerswitchoralu.v(68): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 68
-Warning (10230): Verilog HDL assignment warning at registerswitchoralu.v(68): truncated value with size 32 to match size of target (5) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 68
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R0", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R3", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R2", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Warning (10240): Verilog HDL Always Construct warning at registerswitchoralu.v(13): inferring latch(es) for variable "R1", which holds its previous value in one or more paths through the always construct File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R1[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R1[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R1[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R1[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R1[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R2[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R2[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R2[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R2[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R2[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R3[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R3[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R3[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R3[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R3[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R0[0]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R0[1]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R0[2]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R0[3]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (10041): Inferred latch for "R0[4]" at registerswitchoralu.v(13) File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "RegisterSwitchorALU:inst2|R3[0]" merged with LATCH primitive "RegisterSwitchorALU:inst2|R3[1]" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-Warning (13012): Latch RegisterSwitchorALU:inst2|R1[0] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
-Warning (13012): Latch RegisterSwitchorALU:inst2|R2[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
-Warning (13012): Latch RegisterSwitchorALU:inst2|R3[1] has unsafe behavior File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 13
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0]
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "R0[4]" is stuck at GND
-    Warning (13410): Pin "R0[3]" is stuck at GND
-    Warning (13410): Pin "R0[2]" is stuck at GND
-    Warning (13410): Pin "R0[1]" is stuck at GND
-    Warning (13410): Pin "R0[0]" is stuck at GND
-    Warning (13410): Pin "R1[4]" is stuck at GND
-    Warning (13410): Pin "R1[3]" is stuck at GND
-    Warning (13410): Pin "R1[2]" is stuck at GND
-    Warning (13410): Pin "R1[1]" is stuck at GND
-    Warning (13410): Pin "R2[4]" is stuck at GND
-    Warning (13410): Pin "R2[3]" is stuck at GND
-    Warning (13410): Pin "R2[2]" is stuck at GND
-    Warning (13410): Pin "R2[0]" is stuck at GND
-    Warning (13410): Pin "R3[4]" is stuck at GND
-    Warning (13410): Pin "R3[3]" is stuck at GND
-    Warning (13410): Pin "R3[2]" is stuck at GND
+Info (12128): Elaborating entity "RegisterSwitchorALU" for hierarchy "RegisterSwitchorALU:inst1"
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "RegisterSwitchorALU:inst1|Mult2" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "RegisterSwitchorALU:inst1|Mult1" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 66
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "RegisterSwitchorALU:inst1|Mult0" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "RegisterSwitchorALU:inst1|Mult3" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 68
+Info (12130): Elaborated megafunction instantiation "RegisterSwitchorALU:inst1|lpm_mult:Mult2" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
+Info (12133): Instantiated megafunction "RegisterSwitchorALU:inst1|lpm_mult:Mult2" with the following parameter: File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 67
+    Info (12134): Parameter "LPM_WIDTHA" = "5"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "10"
+    Info (12134): Parameter "LPM_WIDTHR" = "10"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_u9t.tdf
+    Info (12023): Found entity 1: mult_u9t File: U:/281/Digital-Calculator/CalcBlock/db/mult_u9t.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "RegisterSwitchorALU:inst1|lpm_mult:Mult0" File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
+Info (12133): Instantiated megafunction "RegisterSwitchorALU:inst1|lpm_mult:Mult0" with the following parameter: File: U:/281/Digital-Calculator/CalcBlock/registerswitchoralu.v Line: 65
+    Info (12134): Parameter "LPM_WIDTHA" = "5"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "10"
+    Info (12134): Parameter "LPM_WIDTHR" = "10"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Clk"
-    Warning (15610): No output dependent on input pin "Reset"
-    Warning (15610): No output dependent on input pin "Perform"
-Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 20 output pins
-    Info (21061): Implemented 9 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 133 warnings
-    Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Thu May 02 19:51:24 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:20
+    Info (21061): Implemented 144 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 668 megabytes
+    Info: Processing ended: Fri May 03 00:52:59 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:23
 
 

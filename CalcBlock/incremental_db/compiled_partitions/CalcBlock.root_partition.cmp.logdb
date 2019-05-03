@@ -1,1 +1,6 @@
 v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,RegisterSwitchorALU:inst1|lpm_mult:Mult3|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,RegisterSwitchorALU:inst1|lpm_mult:Mult0|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,RegisterSwitchorALU:inst1|lpm_mult:Mult1|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,RegisterSwitchorALU:inst1|lpm_mult:Mult2|mult_u9t:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,RegisterSwitchorALU:inst1|lpm_mult:Mult2|mult_u9t:auto_generated|mac_mult1,

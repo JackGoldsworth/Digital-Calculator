@@ -1,0 +1,37 @@
+module mux(na, nb, nc, nd, a, b, c, d, w, x, y, z, sel);
+	
+	input w0, w1;
+	input [4:0] a, b, c, d, na, nb, nc, nd;
+	output reg [4:0] w, x, y ,z;
+	
+	always @(*)
+		begin
+			case(sel)
+				2'b00: begin
+					w = na;
+					x = b;
+					y = c;
+					z = d;
+				end
+				2'b01: begin
+					w = a;
+					x = nb;
+					y = c;
+					z = d;
+				end
+				2'b10: begin
+					w = a;
+					x = b;
+					y = nc;
+					z = d;
+				end
+				2'b11: begin
+					w = a;
+					x = b;
+					y = c;
+					z = nd;
+				end
+			endcase
+		end
+endmodule
+	

@@ -1,0 +1,146 @@
+|RegisterFile
+Out04 <= bus[4].DB_MAX_OUTPUT_PORT_TYPE
+Perform => inst5.IN0
+Perform => inst6.IN0
+Perform => inst7.IN0
+Perform => inst8.IN0
+Clk => inst5.IN1
+Clk => inst6.IN1
+Clk => inst7.IN1
+Clk => inst8.IN1
+Reset => 5BitRegister:inst.Reset
+Reset => 5BitRegister:inst1.Reset
+Reset => 5BitRegister:inst2.Reset
+Reset => 5BitRegister:inst3.Reset
+a[0] => 5BitRegister:inst.In0
+a[0] => 5BitRegister:inst1.In0
+a[0] => 5BitRegister:inst2.In0
+a[0] => 5BitRegister:inst3.In0
+a[1] => 5BitRegister:inst.In1
+a[1] => 5BitRegister:inst1.In1
+a[1] => 5BitRegister:inst2.In1
+a[1] => 5BitRegister:inst3.In1
+a[2] => 5BitRegister:inst.In2
+a[2] => 5BitRegister:inst1.In2
+a[2] => 5BitRegister:inst2.In2
+a[2] => 5BitRegister:inst3.In2
+a[3] => 5BitRegister:inst.In3
+a[3] => 5BitRegister:inst1.In3
+a[3] => 5BitRegister:inst2.In3
+a[3] => 5BitRegister:inst3.In3
+a[4] => 5BitRegister:inst.In4
+a[4] => 5BitRegister:inst1.In4
+a[4] => 5BitRegister:inst2.In4
+a[4] => 5BitRegister:inst3.In4
+Out03 <= bus[3].DB_MAX_OUTPUT_PORT_TYPE
+Out02 <= bus[2].DB_MAX_OUTPUT_PORT_TYPE
+Out01 <= bus[1].DB_MAX_OUTPUT_PORT_TYPE
+Out00 <= bus[0].DB_MAX_OUTPUT_PORT_TYPE
+Out14 <= b[4].DB_MAX_OUTPUT_PORT_TYPE
+b[0] => Out10.DATAIN
+b[1] => Out11.DATAIN
+b[2] => Out12.DATAIN
+b[3] => Out13.DATAIN
+b[4] => Out14.DATAIN
+Out13 <= b[3].DB_MAX_OUTPUT_PORT_TYPE
+Out12 <= b[2].DB_MAX_OUTPUT_PORT_TYPE
+Out11 <= b[1].DB_MAX_OUTPUT_PORT_TYPE
+Out10 <= b[0].DB_MAX_OUTPUT_PORT_TYPE
+Out24 <= c[4].DB_MAX_OUTPUT_PORT_TYPE
+c[0] => Out20.DATAIN
+c[1] => Out21.DATAIN
+c[2] => Out22.DATAIN
+c[3] => Out23.DATAIN
+c[4] => Out24.DATAIN
+Out23 <= c[3].DB_MAX_OUTPUT_PORT_TYPE
+Out22 <= c[2].DB_MAX_OUTPUT_PORT_TYPE
+Out21 <= c[1].DB_MAX_OUTPUT_PORT_TYPE
+Out20 <= c[0].DB_MAX_OUTPUT_PORT_TYPE
+Out34 <= d[4].DB_MAX_OUTPUT_PORT_TYPE
+d[0] => Out30.DATAIN
+d[1] => Out31.DATAIN
+d[2] => Out32.DATAIN
+d[3] => Out33.DATAIN
+d[4] => Out34.DATAIN
+Out33 <= d[3].DB_MAX_OUTPUT_PORT_TYPE
+Out32 <= d[2].DB_MAX_OUTPUT_PORT_TYPE
+Out31 <= d[1].DB_MAX_OUTPUT_PORT_TYPE
+Out30 <= d[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegisterFile|5BitRegister:inst
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|RegisterFile|5BitRegister:inst1
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|RegisterFile|5BitRegister:inst2
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+
+|RegisterFile|5BitRegister:inst3
+F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
+Reset => notboi.IN0
+Clk => DFF0.CLK
+Clk => DFF1.CLK
+Clk => DFF2.CLK
+Clk => DFF3.CLK
+Clk => DFF4.CLK
+In0 => DFF0.DATAIN
+F1 <= DFF1.DB_MAX_OUTPUT_PORT_TYPE
+In1 => DFF1.DATAIN
+F2 <= DFF2.DB_MAX_OUTPUT_PORT_TYPE
+In2 => DFF2.DATAIN
+F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
+In3 => DFF3.DATAIN
+F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
+In4 => DFF4.DATAIN
+
+

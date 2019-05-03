@@ -128,40 +128,39 @@ N1X0 <= S0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DigitalCalculator|CalcBlock:inst
-R0[0] <= FSM:inst.Out0[0]
-R0[1] <= FSM:inst.Out0[1]
-R0[2] <= FSM:inst.Out0[2]
-R0[3] <= FSM:inst.Out0[3]
-R0[4] <= FSM:inst.Out0[4]
-Perform => debouncer:inst3.Manual
-Perform => FSM:inst.Perform
-Perform => RegisterSwitchorALU:inst1.Perform
-Clk => debouncer:inst3.Board
-Reset => FSM:inst.Reset
+R0[0] <= RegisterFile:inst.Out0[0]
+R0[1] <= RegisterFile:inst.Out0[1]
+R0[2] <= RegisterFile:inst.Out0[2]
+R0[3] <= RegisterFile:inst.Out0[3]
+R0[4] <= RegisterFile:inst.Out0[4]
+Clk => RegisterFile:inst.Clk
+Reset => RegisterFile:inst.Reset
 Reset => RegisterSwitchorALU:inst1.Clr
+Perform => RegisterFile:inst.Perform
+Perform => RegisterSwitchorALU:inst1.Perform
 K[0] => RegisterSwitchorALU:inst1.K[0]
 K[1] => RegisterSwitchorALU:inst1.K[1]
 OP[0] => RegisterSwitchorALU:inst1.OP[0]
 OP[1] => RegisterSwitchorALU:inst1.OP[1]
 OP[2] => RegisterSwitchorALU:inst1.OP[2]
-R1[0] <= FSM:inst.Out1[0]
-R1[1] <= FSM:inst.Out1[1]
-R1[2] <= FSM:inst.Out1[2]
-R1[3] <= FSM:inst.Out1[3]
-R1[4] <= FSM:inst.Out1[4]
-R2[0] <= FSM:inst.Out2[0]
-R2[1] <= FSM:inst.Out2[1]
-R2[2] <= FSM:inst.Out2[2]
-R2[3] <= FSM:inst.Out2[3]
-R2[4] <= FSM:inst.Out2[4]
-R3[0] <= FSM:inst.Out3[0]
-R3[1] <= FSM:inst.Out3[1]
-R3[2] <= FSM:inst.Out3[2]
-R3[3] <= FSM:inst.Out3[3]
-R3[4] <= FSM:inst.Out3[4]
+R1[0] <= RegisterFile:inst.Out1[0]
+R1[1] <= RegisterFile:inst.Out1[1]
+R1[2] <= RegisterFile:inst.Out1[2]
+R1[3] <= RegisterFile:inst.Out1[3]
+R1[4] <= RegisterFile:inst.Out1[4]
+R2[0] <= RegisterFile:inst.Out2[0]
+R2[1] <= RegisterFile:inst.Out2[1]
+R2[2] <= RegisterFile:inst.Out2[2]
+R2[3] <= RegisterFile:inst.Out2[3]
+R2[4] <= RegisterFile:inst.Out2[4]
+R3[0] <= RegisterFile:inst.Out3[0]
+R3[1] <= RegisterFile:inst.Out3[1]
+R3[2] <= RegisterFile:inst.Out3[2]
+R3[3] <= RegisterFile:inst.Out3[3]
+R3[4] <= RegisterFile:inst.Out3[4]
 
 
-|DigitalCalculator|CalcBlock:inst|FSM:inst
+|DigitalCalculator|CalcBlock:inst|RegisterFile:inst
 Out04 <= bus[4].DB_MAX_OUTPUT_PORT_TYPE
 Perform => inst5.IN0
 Perform => inst6.IN0
@@ -231,7 +230,7 @@ Out31 <= d[1].DB_MAX_OUTPUT_PORT_TYPE
 Out30 <= d[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DigitalCalculator|CalcBlock:inst|FSM:inst|5BitRegister:inst
+|DigitalCalculator|CalcBlock:inst|RegisterFile:inst|5BitRegister:inst
 F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
 Reset => notboi.IN0
 Clk => DFF0.CLK
@@ -250,7 +249,7 @@ F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
 In4 => DFF4.DATAIN
 
 
-|DigitalCalculator|CalcBlock:inst|FSM:inst|5BitRegister:inst1
+|DigitalCalculator|CalcBlock:inst|RegisterFile:inst|5BitRegister:inst1
 F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
 Reset => notboi.IN0
 Clk => DFF0.CLK
@@ -269,7 +268,7 @@ F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
 In4 => DFF4.DATAIN
 
 
-|DigitalCalculator|CalcBlock:inst|FSM:inst|5BitRegister:inst2
+|DigitalCalculator|CalcBlock:inst|RegisterFile:inst|5BitRegister:inst2
 F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
 Reset => notboi.IN0
 Clk => DFF0.CLK
@@ -288,7 +287,7 @@ F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
 In4 => DFF4.DATAIN
 
 
-|DigitalCalculator|CalcBlock:inst|FSM:inst|5BitRegister:inst3
+|DigitalCalculator|CalcBlock:inst|RegisterFile:inst|5BitRegister:inst3
 F0 <= DFF0.DB_MAX_OUTPUT_PORT_TYPE
 Reset => notboi.IN0
 Clk => DFF0.CLK
@@ -305,40 +304,6 @@ F3 <= DFF3.DB_MAX_OUTPUT_PORT_TYPE
 In3 => DFF3.DATAIN
 F4 <= DFF4.DB_MAX_OUTPUT_PORT_TYPE
 In4 => DFF4.DATAIN
-
-
-|DigitalCalculator|CalcBlock:inst|debouncer:inst3
-Smooth <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-Board => clock_divider_1024:inst.CLK_IN
-Manual => inst2.DATAIN
-
-
-|DigitalCalculator|CalcBlock:inst|debouncer:inst3|clock_divider_1024:inst1
-CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-CLK_IN => inst1.CLK
-CLK_IN => inst2.CLK
-CLK_IN => inst3.CLK
-CLK_IN => inst4.CLK
-CLK_IN => inst5.CLK
-CLK_IN => inst6.CLK
-CLK_IN => inst7.CLK
-CLK_IN => inst8.CLK
-CLK_IN => inst9.CLK
-CLK_IN => inst10.CLK
-
-
-|DigitalCalculator|CalcBlock:inst|debouncer:inst3|clock_divider_1024:inst
-CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-CLK_IN => inst1.CLK
-CLK_IN => inst2.CLK
-CLK_IN => inst3.CLK
-CLK_IN => inst4.CLK
-CLK_IN => inst5.CLK
-CLK_IN => inst6.CLK
-CLK_IN => inst7.CLK
-CLK_IN => inst8.CLK
-CLK_IN => inst9.CLK
-CLK_IN => inst10.CLK
 
 
 |DigitalCalculator|CalcBlock:inst|RegisterSwitchorALU:inst1

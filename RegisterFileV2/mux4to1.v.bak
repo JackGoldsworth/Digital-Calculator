@@ -1,0 +1,7 @@
+module mux4to1(sel, a, b, c, d, out);
+
+	input [1:0]
+	input [4:0] a, b, c, d;
+	output [4:0] out;
+	
+	
